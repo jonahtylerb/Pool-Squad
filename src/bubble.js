@@ -4,24 +4,26 @@ var particles = [];
 var particleCount = 100;
 
 window.addEventListener("load", function () {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = document.body.clientWidth;
+  canvas.height = document.body.clientHeight;
 
   for (var i = 0; i < particleCount; i++) particles.push(new particle());
 });
 
 // onresize
 window.addEventListener("resize", function () {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = document.body.clientWidth;
+  canvas.height = document.body.clientHeight;
 });
 
-function particle() {
-  this.x = Math.random() * canvas.width;
-  this.y = canvas.height + Math.random() * 300;
-  this.speed = 0.25 + Math.random() * 0.5;
-  this.radius = Math.random() * 20;
-  this.opacity = (Math.random() * 100) / 1000;
+class particle {
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = canvas.height + Math.random() * 300;
+    this.speed = 0.25 + Math.random() * 0.5;
+    this.radius = Math.random() * 20;
+    this.opacity = (Math.random() * 100) / 1000;
+  }
 }
 
 function loop() {

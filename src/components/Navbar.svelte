@@ -13,7 +13,7 @@
 </script>
 
 <nav
-  class="py-5 px-10 shadow-lg z-100 fixed top-0 left-0 items-center right-0 w-full bg-$pico-background-color"
+  class="py-5 px-10 shadow-lg z-1000 fixed top-0 left-0 items-center right-0 w-full bg-$pico-background-color"
 >
   <ul>
     <img src="/logo.png" class="w-10" alt="logo" />
