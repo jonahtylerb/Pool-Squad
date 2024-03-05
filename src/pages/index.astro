@@ -4,6 +4,8 @@ import { Image  }from "astro:assets";
 import pool from "../Assets/pool.jpg"
 import cleaning from "../Assets/cleaning.jpg"
 import tools from "../Assets/tools.jpg"
+
+import "@picocss/pico/css/pico.min.css"
 ---
 
 <html lang="en">
@@ -14,20 +16,19 @@ import tools from "../Assets/tools.jpg"
 		<meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="light" />
 		<title>Astro</title>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-/>
 	</head>
-  <body class="relative">
-    <canvas id="water" class="z--1"></canvas>
-    <Navbar />
-    <main class="mt-30">
-      <section class="flex flex-col lg:flex-row-reverse gap-20">
-      <div class="h-130 relative w-full lg:w-50% overflow-hidden">
-      <Image class="w-70% h-full object-cover shadow-lg rounded-xl absolute top-0 bottom-0 left-5" src={pool} alt="a clean pool"></Image>
-        <Image class="w-60% object-cover shadow-lg rounded-xl absolute top-20 at-md:top--10 at-lg:top-50 -right-10" src={tools} alt="a clean pool"></Image>
-      <Image class="w-80% shadow-lg object-cover rounded-xl absolute bottom-5 -right-20" src={cleaning} alt="cleaning a pool"></Image>
+  <body class="relative pb-20">
+    <canvas id="water"></canvas>
+    <Navbar client:load />
+    <main class="pt-30 z-10">
+      <section class="flex flex-col lg:flex-row-reverse gap-5">
+      <div class="h-full max-h-400 items-stretch justify-center p-5 all:rounded-lg all:h-100% gap-5 flex flex-row lg:w-70%">
+         
+          <Image class="object-cover w-50%" src={pool} alt="a clean pool"></Image>
+          <div class="flex flex-col gap-5">
+          <Image class="object-cover" src={cleaning} alt="cleaning a pool"></Image>
+          <Image class="object-cover" src={tools} alt="a clean pool"></Image>
+        </div>
       </div>
         <div class="w-full lg:w-50% p-5">
 <h1 class="">Welcome to Pool Squad</h1>
@@ -40,6 +41,12 @@ Pool Squad is your go-to destination for personalized, expert pool maintenance s
 </html>
 
 <style>
+
+body {
+  background: var(--pico-background-color);
+  color: var(--pico-color);
+}
+
 @font-face {
   font-family: "squad-light";
   src: url("../Assets/light.ttf") format("truetype");
