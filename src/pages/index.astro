@@ -7,7 +7,7 @@ import tools from "../Assets/tools.jpg"
 ---
 
 <html lang="en">
-	<head >
+	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
@@ -19,14 +19,14 @@ import tools from "../Assets/tools.jpg"
   href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
 />
 	</head>
-  <body>
+  <body class="relative">
     <canvas id="water" class="z--1"></canvas>
     <Navbar />
-    <main class="mt-30 space-y-5">
+    <main class="mt-30">
       <section class="flex flex-col lg:flex-row-reverse gap-20">
-      <div class="h-150 relative w-full lg:w-50%">
-      <Image class="w-70% h-90% object-cover shadow-lg rounded-xl absolute top-0 -left-10" src={pool} alt="a clean pool"></Image>
-        <Image class="w-60% object-cover shadow-lg rounded-xl absolute top-15 at-md:top--10 at-lg:top-50 -right-10" src={tools} alt="a clean pool"></Image>
+      <div class="h-130 relative w-full lg:w-50% overflow-hidden">
+      <Image class="w-70% h-full object-cover shadow-lg rounded-xl absolute top-0 bottom-0 left-5" src={pool} alt="a clean pool"></Image>
+        <Image class="w-60% object-cover shadow-lg rounded-xl absolute top-20 at-md:top--10 at-lg:top-50 -right-10" src={tools} alt="a clean pool"></Image>
       <Image class="w-80% shadow-lg object-cover rounded-xl absolute bottom-5 -right-20" src={cleaning} alt="cleaning a pool"></Image>
       </div>
         <div class="w-full lg:w-50% p-5">
@@ -68,9 +68,7 @@ Pool Squad is your go-to destination for personalized, expert pool maintenance s
 #water{
     width:100%;
     height:100%;
-    z-index: 10;
-    top:0;
-    left:0;
+    inset: 0;
     position: absolute;
 }
 </style>

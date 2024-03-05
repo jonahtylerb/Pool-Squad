@@ -19,9 +19,9 @@ window.addEventListener("resize", function () {
 function particle() {
   this.x = Math.random() * canvas.width;
   this.y = canvas.height + Math.random() * 300;
-  this.speed = 0.5 + Math.random() * 1;
+  this.speed = 0.25 + Math.random() * 0.5;
   this.radius = Math.random() * 20;
-  this.opacity = (Math.random() * 100) / 3000;
+  this.opacity = (Math.random() * 100) / 1000;
 }
 
 function loop() {
