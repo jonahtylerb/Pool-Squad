@@ -1,0 +1,76 @@
+---
+import Navbar from "../components/Navbar.svelte";
+import { Image  }from "astro:assets";
+import pool from "../Assets/pool.jpg"
+import cleaning from "../Assets/cleaning.jpg"
+import tools from "../Assets/tools.jpg"
+---
+
+<html lang="en">
+	<head >
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light" />
+		<title>Astro</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+/>
+	</head>
+  <body>
+    <canvas id="water" class="z--1"></canvas>
+    <Navbar />
+    <main class="mt-30 space-y-5">
+      <section class="flex flex-col lg:flex-row-reverse gap-20">
+      <div class="h-150 relative w-full lg:w-50%">
+      <Image class="w-70% h-90% object-cover shadow-lg rounded-xl absolute top-0 -left-10" src={pool} alt="a clean pool"></Image>
+        <Image class="w-60% object-cover shadow-lg rounded-xl absolute top-15 at-md:top--10 at-lg:top-50 -right-10" src={tools} alt="a clean pool"></Image>
+      <Image class="w-80% shadow-lg object-cover rounded-xl absolute bottom-5 -right-20" src={cleaning} alt="cleaning a pool"></Image>
+      </div>
+        <div class="w-full lg:w-50% p-5">
+<h1 class="">Welcome to Pool Squad</h1>
+      Your Personal Pool Maintenance Expert!
+Pool Squad is your go-to destination for personalized, expert pool maintenance services. Owned and operated by Tyler Patterson, we offer tailored weekly pool maintenance to ensure your pool stays in pristine condition. Experience the difference of dedicated care from a trusted professional. Join Pool Squad today and let's keep your pool sparkling together!</main>
+    </section>
+    </div>
+    <script src="../bubble.js"></script>
+	</body>
+</html>
+
+<style>
+@font-face {
+  font-family: "squad-light";
+  src: url("../Assets/light.ttf") format("truetype");
+  font-weight: 100;
+  font-style: light;
+}
+
+@font-face {
+  font-family: "squad-mid";
+  src: url("../Assets/mid.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "squad-bold";
+  src: url("../Assets/bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: bold;
+}
+
+*{
+  font-family: "squad-mid";
+}
+
+#water{
+    width:100%;
+    height:100%;
+    z-index: 10;
+    top:0;
+    left:0;
+    position: absolute;
+}
+</style>
