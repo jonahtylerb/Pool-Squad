@@ -5,6 +5,7 @@ import { Image  }from "astro:assets";
 import pool from "../Assets/pool.jpg"
 import cleaning from "../Assets/cleaning.jpg"
 import tools from "../Assets/tools.jpg"
+import Gallery from "../components/Gallery.astro";
 
 import "@picocss/pico/css/pico.min.css"
 ---
@@ -25,7 +26,7 @@ import "@picocss/pico/css/pico.min.css"
 <meta name="theme-color" content="#ffffff">
     <title>Pool Squad</title>
 	</head>
-  <body class="relative pb-20 z-0">
+  <body class="pb-20 z-0">
     <canvas id="water" class="z-0"></canvas>
     <Navbar client:load />
     <main class="pt-30 z-100 relative">
@@ -42,6 +43,32 @@ import "@picocss/pico/css/pico.min.css"
       Your Personal Pool Maintenance Expert! Pool Squad is your go-to destination for personalized, expert pool maintenance services. Owned and operated by Tyler Patterson, we offer tailored weekly pool maintenance to ensure your pool stays in pristine condition. Experience the difference of dedicated care from a trusted professional. Join Pool Squad today and let's keep your pool sparkling together!
           </div>
       </section> 
+      <section class="relative mt-10 pb-5 px-10 bg-$pico-code-background-color">
+        <div class="absolute top--10 left-0 right-0 w-full h-10 bg-$pico-code-background-color" style="clip-path: polygon(0 0, 0% 100%, 100% 100%)"></div>
+        <hgroup>
+        <h1>Services</h1>
+<h2>Swimming Pool Full Service – Weekly Visit</h2>
+        </hgroup>
+        <ul>
+<li>Service includes testing of water chemistry and addition of needed chemicals to maintain proper water balance within normal operating environment.</li>
+<li>Pool surface, sides, and bottom are skimmed with net to collect debris.</li>
+<li>Pool is vacuumed on an as needed basis. </li>
+<li>Pool is brushed.</li>
+<li>All baskets are emptied of debris.</li>
+<li>Pool bottom and sides are vacuumed as needed.</li>
+<li>Pool equipment is powered up and checked for proper operation, adjustments are made to optimize system performance.</li>
+<li>Filter is backwashed if applicable.</li>
+<li>Report is generated and made available to Homeowner/Resident upon request.</li>
+        </ul>
+        <div class="absolute bottom--10 left-0 right-0 w-full h-10 bg-$pico-code-background-color" style="clip-path: polygon(0 0,100% 0%,100% 100%)"></div>
+      </section>
+      <section class="mt-10 p-10">
+        <hgroup>
+          <h1>Gallery</h1>
+<h2>Check out some of our work!</h2>
+        </hgroup>
+        <Gallery />
+      </section>
     </main> 
     <Footer client:load />
     <script src="../bubble.js"></script>

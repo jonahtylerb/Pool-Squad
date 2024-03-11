@@ -1,7 +1,7 @@
-var canvas = document.getElementById("water");
-var ctx = canvas.getContext("2d");
-var particles = [];
-var particleCount = 100;
+let canvas = document.getElementById("water");
+let ctx = canvas.getContext("2d");
+let particles = [];
+let particleCount = 100;
 
 window.addEventListener("load", function () {
   canvas.width = document.body.clientWidth;
@@ -10,7 +10,6 @@ window.addEventListener("load", function () {
   for (var i = 0; i < particleCount; i++) particles.push(new particle());
 });
 
-// onresize
 window.addEventListener("resize", function () {
   canvas.width = document.body.clientWidth;
   canvas.height = document.body.clientHeight;

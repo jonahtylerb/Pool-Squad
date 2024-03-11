@@ -2,13 +2,8 @@
   let theme = "light";
 
   const toggleTheme = () => {
-    if (theme === "dark") {
-      theme = "light";
-      document.documentElement.setAttribute("data-theme", "dark");
-      return;
-    }
-    theme = "dark";
-    document.documentElement.setAttribute("data-theme", "light");
+    theme = theme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
   };
 </script>
 
